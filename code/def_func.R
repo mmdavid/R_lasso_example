@@ -8,13 +8,10 @@ option_list = list(
   make_option(c("-i", "--input"), action="store", default=NA, type='character',
               help="Input file  -file.Rda "),
   #Input file. Need to be an .Rda file. In our example this file is a list of 12 dataframes
-  #Each dataframe has 88 rows which correspond to the samples used as training dataset
-  #The value in each dataframe depends on the normalization used. 
-  #FOUR normalizations:
-  #1/original dataset='_no_norm' 2/transformation log10+1='_log'
-  #3/divided by mean => xi/μi = '_red' 4/value - mean / SD => (xi-μi)/σ = '_red_sd'
-  #THREE filtering methods: 1/no filter = 'sybset_ok';
-  #2/spearman cut-off r2 at 0.99='no_cor_099' 3/spearman cut-off r2 at 0.9='no_cor_09'
+  #Each dataframe has 88 rows which correspond to the samples used as training dataset.
+  #The columns are the features.
+  #There are 12 datasets in our exemple because I am preprocessed the data with FOUR normalizations
+  #and THREE filtering methods: 3*4 = 12 datasets.
   make_option(c("-c", "--classes"), action="store", default=NA, type='character',
               help="Binary classes the samples belong to"),
   #This file needs to be an .Rda, integrer 1 or 0 depending on the classe the samples belongs to. 
