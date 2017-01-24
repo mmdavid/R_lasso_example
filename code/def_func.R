@@ -27,8 +27,7 @@ option_list = list(
   #How many repetitions of cross validation per feature do you want to calculate 
   #the area under the curve. Default: 20.
   make_option(c("-r", "--repetition"), action="store", default=20, type='integer',
-              help="Integer: how many cross validation repetitions to performed 
-              by datasets. [default %default]"),
+              help="Integer: how many cross validation repetitions to perform. [default %default]"),
   #If verbose is set to TRUE (default) then the output will be both printed on 
   #the screen AND in a log file 
   make_option(c("-v", "--verbose"), action="store", default=TRUE, type='logical',
