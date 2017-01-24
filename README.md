@@ -17,9 +17,9 @@ Notes: The data exemple are stored in the /data folder.
 
 The script requires at least 3 arguments: 
 
--i input file, needs to be .Rda file with the data to analyze (see exemple above)
+-i input file, needs to be an .Rda object with the data to analyze (see example above)
 
--c classes to which the samples belong, either 0 or 1. Needs to be .Rda file. 
+-c classes to which the samples belong, either 0 or 1. Needs to be an .Rda object as well (see example file)
 
 -o path to output folder to store the plots generated as well as the file 'output_binomial_regression.Rda'
 

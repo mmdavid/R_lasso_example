@@ -10,11 +10,11 @@ option_list = list(
   #Input file. Need to be an .Rda file. In our example this file is a list of 12 dataframes
   #Each dataframe has 88 rows which correspond to the samples used as training dataset
   #The value in each dataframe depends on the normalization used. 
-  #FOUR normalizations: 1/Original dataset='no_norm' 2/transformation log10 +1=sybset_ok_log
-  # 3/ value / mean => xi/μi 4/ value - mean / SD => (xi-μi)/σ = 'red_sd'
-  #THREE filtering methods: no filter = 'sybset_ok'; 
-  #Spearman cut-off r2 at 0.99='no_cor_099'; Spearman cut-off r2 at 0.9='no_cor_09'
-  #setting up the classe for each 
+  #FOUR normalizations:
+  #1/original dataset='_no_norm' 2/transformation log10+1='_log'
+  #3/divided by mean => xi/μi = '_red' 4/value - mean / SD => (xi-μi)/σ = '_red_sd'
+  #THREE filtering methods: 1/no filter = 'sybset_ok';
+  #2/spearman cut-off r2 at 0.99='no_cor_099' 3/spearman cut-off r2 at 0.9='no_cor_09'
   make_option(c("-c", "--classes"), action="store", default=NA, type='character',
               help="Binary classes the samples belong to"),
   #This file needs to be an .Rda, integrer 1 or 0 depending on the classe the samples belongs to. 
@@ -28,8 +28,8 @@ option_list = list(
   #the area under the curve. Default: 20.
   make_option(c("-r", "--repetition"), action="store", default=20, type='integer',
               help="Integer: how many cross validation repetitions to perform. [default %default]"),
-  #If verbose is set to TRUE (default) then the output will be both printed on 
-  #the screen AND in a log file 
+  #If verbose is set to TRUE (default) then the output will be printed on the screen
+  #If verbose is set to TRUE, the output will be stored in the file log.txt
   make_option(c("-v", "--verbose"), action="store", default=TRUE, type='logical',
               help="Make the program be verbose. [default %default]")
 )
@@ -62,8 +62,7 @@ logisticestimation <- function(listofdataset, classokl, numrep){
       AUtmp <- cvfit$cvm[cvfit$lambda == cvfit$lambda.min]
       AUCok <- c(AUCok,AUtmp)
     }
-
-    # Finally we select features of inportance, with a weight different than zero
+    # Finally we select features of importance, with a weight different than zero
     # Meaning that the feature matters for at least one of the two classes
     coefchosen <- coef(cvfit, s = "lambda.min")
     coefchosenok <- coefchosen[coefchosen[, 1] != 0, 1]
@@ -81,7 +80,7 @@ logisticestimation <- function(listofdataset, classokl, numrep){
 #################################################################################
 #Function extracting the features weigth, to find the features of importance
 #################################################################################
-#Here we're suing the output from the previous function 'logisticestimation'
+#Here we're using the output from the previous function 'logisticestimation'
 namefeatures <- function(dt){
   namokdup = c()
   for (i in 1:length(dt)){
