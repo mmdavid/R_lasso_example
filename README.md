@@ -2,7 +2,7 @@
 
 This is an R function to run an example logistic regression using glmnet package. You will need to clone the repository:
 
-    git clone https://github.com/mmdavid/.git
+    git clone https://github.com/mmdavid/R_lasso_example.git
     cd R_lasso/code
 
 You can run the script as follows to see `--help`
