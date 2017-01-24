@@ -1,6 +1,6 @@
 # Logistic Regression
 
-This is an R function to run an example logistic regression using glmnet package. You will need to clone the repository:
+This is an R function to run an example of feature selection with lasso & logistic regression using glmnet package. You will need to clone the repository:
 
     git clone https://github.com/mmdavid/R_lasso_example.git
     cd R_lasso_example/code
