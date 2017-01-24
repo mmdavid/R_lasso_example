@@ -1,0 +1,20 @@
+ Input file: ../data/all_datasets.Rda 
+ Output folder: ../output_folder/ 
+ Class of the samples: ../data/classallsamples.Rda 
+Number of repetitions 20 
+running iteration  1  of  12 
+running iteration  2  of  12 
+running iteration  3  of  12 
+running iteration  4  of  12 
+running iteration  5  of  12 
+running iteration  6  of  12 
+running iteration  7  of  12 
+running iteration  8  of  12 
+running iteration  9  of  12 
+running iteration  10  of  12 
+running iteration  11  of  12 
+running iteration  12  of  12 
+null device 
+          1 
+null device 
+          1 
