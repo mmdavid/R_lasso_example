@@ -27,9 +27,14 @@ The other aguments are optionals, you can see them using the --help option.
 
 This script will run an example of feature selection using lasso and cross-validation on the training dataset only.
 
+
 The output gives: 
-AUC_graph.pdf: Boxplot of the performance of each classifier for each dataset for a number fo repetitions determine by the option -r
-Log10_of_feature_weigth.pdf: Boxplot ranking the absolute value of the mean of the weight attibuted to each feature. 
-output_binomial_regression.Rda: an R object with the feature's name and weight
+
+
+- AUC_graph.pdf: Boxplot of the performance of each classifier for each dataset for a number fo repetitions determine by the option -r.
+
+- Log10_of_feature_weigth.pdf: Boxplot ranking the absolute value of the mean of the weight attibuted to each feature. 
+
+- output_binomial_regression.Rda: an R object with the feature's name and weight.
 
 An example of output is provided in the example_results/ folder. 
