@@ -35,6 +35,6 @@ The output gives:
 
 - Log10_of_feature_weigth.pdf: Boxplot ranking the absolute value of the mean of the weight attibuted to each feature. 
 
-- output_binomial_regression.Rda: an R object with the feature's name and weight.
+- output_binomial_regression.Rda: an R object with name and weight of the features. 
 
 An example of output is provided in the example_results/ folder. 
